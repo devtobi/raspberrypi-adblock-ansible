@@ -3,19 +3,23 @@
 security_auto_reboot_with_users: true
 security_auto_reboot_time: 02:00
 security_system_user: root
-security_allow_ufw_ports:
-  # ssh port
-  - 22
-  # web ports
-  - 443
-  - 80
-  # dns ports
+security_allow_ufw_ports_udp:
+  # DNS ports
   - 53
   - 853
-  # dhcp ports
+  # DHCP ports
   - 67
   - 68
   - 547
   - 4711
-  # adguard installation interface
+security_allow_ufw_ports_tcp:
+  # SSH port
+  - 22
+  # HTTP(S) ports
+  - 443
+  - 80
+  # DNS ports
+  - 53
+  - 853
+  # Adguard installation interface
   - 3000

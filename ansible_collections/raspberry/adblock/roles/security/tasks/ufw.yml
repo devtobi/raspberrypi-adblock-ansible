@@ -4,10 +4,15 @@
   ansible.builtin.package:
     name: ufw
     state: present
-- name: ufw | Whitelist ports
+- name: ufw | Whitelist ports (UDP)
   become: true
   ansible.builtin.command:
-    cmd: ufw allow {{ security_allow_ufw_ports | join(',') }}
+    cmd: ufw allow {{ security_allow_ufw_ports_udp | join(',') }}/udp
+  changed_when: true
+- name: ufw | Whitelist ports (TCP)
+  become: true
+  ansible.builtin.command:
+    cmd: ufw allow {{ security_allow_ufw_ports_tcp | join(',') }}/tcp
   changed_when: true
 - name: ufw | Enable
   become: true
