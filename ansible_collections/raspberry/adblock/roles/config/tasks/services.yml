@@ -5,6 +5,8 @@
     cmd: raspi-config nonint "{{ item }}" 1
   changed_when: true
   loop: "{{ config_disable_interfaces }}"
+- name: services | Populate service facts
+  ansible.builtin.service_facts:
 - name: services | Disable service "{{ item }}"
   become: true
   ansible.builtin.service:
@@ -12,6 +14,7 @@
     state: stopped
     enabled: false
   loop: "{{ config_disable_services }}"
+  when: item in services"
 - name: services | Disable bluetooth in boot configuration
   become: true
   ansible.builtin.lineinfile:
@@ -25,4 +28,3 @@
     name: "{{ config_purge_packages }}"
     purge: true
     state: absent
-    
