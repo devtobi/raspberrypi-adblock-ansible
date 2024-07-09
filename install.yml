@@ -1,0 +1,10 @@
+---
+- name: Install Adguard on Raspberry Pi
+  hosts: adblock
+  gather_facts: true
+  roles:
+    - raspberry.adblock.update
+    - raspberry.adblock.config
+    - raspberry.adblock.security
+    - raspberry.adblock.update
+    - raspberry.adblock.reboot

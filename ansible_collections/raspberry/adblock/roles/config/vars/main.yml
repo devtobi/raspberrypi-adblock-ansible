@@ -1,0 +1,26 @@
+---
+config_os_family: "Raspbian"
+config_disable_services:
+  - cups
+  - cups-browsed
+  - exim4-based
+  - exim4-config
+  - triggerhappy
+  - hciuart.service
+  - bluetooth.service
+
+config_purge_packages:
+  - cups
+  - exim4-base
+  - exim4-config
+  - triggerhappy
+  - bluez
+
+config_disable_interfaces:
+  - do_camera
+  - do_vnc
+  - do_spi
+  - do_i2c
+  - do_serial
+  - do_onewire
+  - do_rgpio

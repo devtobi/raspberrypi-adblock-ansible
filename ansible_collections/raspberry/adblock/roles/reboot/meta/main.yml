@@ -1,0 +1,10 @@
+---
+galaxy_info:
+  author: "langehm, devtobi"
+  description: Simple role that reboots the machine when reboot is required
+  license: MIT
+  min_ansible_version: "2.15"
+  galaxy_tags:
+    - os
+    - reboot
+dependencies: []

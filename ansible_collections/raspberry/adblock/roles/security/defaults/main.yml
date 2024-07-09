@@ -1,0 +1,19 @@
+---
+# defaults file for security
+security_auto_reboot_with_users: true
+security_auto_reboot_time: 02:00
+security_system_user: root
+security_allow_ufw_ports:
+  # web-ports
+  - 443
+  - 80
+  # dns-port
+  - 53
+  - 853
+  # dhcp-port
+  - 67
+  - 68
+  - 547
+  - 4711
+  # adguard-install
+  - 3000

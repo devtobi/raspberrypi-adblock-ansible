@@ -1,0 +1,11 @@
+---
+galaxy_info:
+  author: langehm, devtobi
+  description: This role configures seucrity measurements like unattended upgrades, fail2ban and firewall
+  license: MIT
+  min_ansible_version: "2.15"
+  galaxy_tags:
+    - os
+    - security
+    - updates
+dependencies: []

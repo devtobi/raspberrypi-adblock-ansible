@@ -1,0 +1,11 @@
+---
+- name: Upgrade packages and distro
+  become: true
+  ansible.builtin.apt:
+    update_cache: true
+    upgrade: full
+    autoremove: true
+    autoclean: true
+    clean: true
+    purge: true
+  when: ansible_facts["os_family"] == "Debian"

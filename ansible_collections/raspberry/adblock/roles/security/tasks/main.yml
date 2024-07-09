@@ -1,0 +1,10 @@
+---
+- name: Install and configure unattended upgrades
+  ansible.builtin.import_tasks:
+    file: unattended-upgrades.yml
+- name: Install and configure fail2ban
+  ansible.builtin.import_tasks:
+    file: fail2ban.yml
+- name: Install and configure ufw firewall
+  ansible.builtin.import_tasks:
+    file: ufw.yml

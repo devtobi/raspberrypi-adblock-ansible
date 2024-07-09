@@ -1,0 +1,24 @@
+---
+- name: unattended-upgrades | Install unanttended upgrades package and dependencies
+  become: true
+  ansible.builtin.package:
+    name:
+      - unanttended-upgrades
+      - mailutils
+    state: present
+- name: unattended-upgrades | Copy unattended-upgrades 20auto-upgrades
+  become: true
+  ansible.builtin.copy:
+    src: ./20auto-upgrades
+    dest: /etc/apt/apt.conf.d
+    owner: root
+    group: root
+    mode: "644"
+- name: unattended-upgrades | Generate unattended-upgrades 50unattended-upgrades
+  become: true
+  ansible.builtin.template:
+    src: 50unattended-upgrades.j2
+    dest: /etc/apt/apt.conf.d
+    owner: root
+    group: root
+    mode: "644"

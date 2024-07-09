@@ -1,0 +1,10 @@
+---
+galaxy_info:
+  author: "langehm, devtobi"
+  description: Role to update a debian based system
+  license: MIT
+  min_ansible_version: "2.15"
+  galaxy_tags:
+    - updates
+    - os
+dependencies: []

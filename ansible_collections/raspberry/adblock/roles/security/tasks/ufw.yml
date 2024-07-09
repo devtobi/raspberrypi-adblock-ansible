@@ -1,0 +1,20 @@
+---
+- name: ufw | Install ufw
+  become: true
+  ansible.builtin.package:
+    name:
+      - ufw
+    state: present
+- name: ufw | Allow port {{ item }}
+  become: true
+  ansible.builtin.command:
+    cmd: ufw allow {{ item }}
+  loop: "{{ security_allow_ufw_ports }}"
+  changed_when: true
+- name: ufw | Ufw enable
+  become: true
+  ansible.builtin.command:
+    cmd: ufw enable -y
+  changed_when: true
+# === Configure dynamic SSH ===
+# sudo echo "Port $SSH_PORT" | sudo tee -a /etc/ssh/sshd_config >/dev/null
