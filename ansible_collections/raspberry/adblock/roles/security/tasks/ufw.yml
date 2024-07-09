@@ -2,10 +2,9 @@
 - name: ufw | Install ufw
   become: true
   ansible.builtin.package:
-    name:
-      - ufw
+    name: ufw
     state: present
-- name: ufw | Allow port {{ item }}
+- name: ufw | Allow ports
   become: true
   ansible.builtin.command:
     cmd: ufw allow {{ item }}
