@@ -1,11 +1,11 @@
 ---
-- name: Check if reboot is required
+- name: Reboot | Check
   ansible.builtin.stat:
     path: /var/run/reboot_required
   register: reboot_required
   when: ansible_facts["distribution"] == "Debian"
 
-- name: Reboot device
+- name: Reboot | Execute
   become: true
   ansible.builtin.reboot:
     reboot_timeout: "{{ reboot_timeout }}"

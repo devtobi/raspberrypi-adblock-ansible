@@ -1,5 +1,5 @@
 ---
-- name: Raspi configurations
+- name: Raspberry Pi specific configurations
   ansible.builtin.import_tasks:
     file: raspi-config.yml
   when: ansible_facts["distribution"] == config_distribution

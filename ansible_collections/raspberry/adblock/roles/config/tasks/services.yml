@@ -1,11 +1,11 @@
 ---
-- name: services | Disable interface
+- name: services | Disable interfaces
   become: true
   ansible.builtin.command:
     cmd: raspi-config nonint "{{ item }}" 1
   changed_when: true
   loop: "{{ config_disable_interfaces }}"
-- name: services | Populate service facts
+- name: services | Get service information
   ansible.builtin.service_facts:
 - name: services | Disable services
   become: true
