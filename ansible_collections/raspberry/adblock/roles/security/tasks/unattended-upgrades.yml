@@ -1,9 +1,9 @@
 ---
-- name: unattended-upgrades | Install unanttended upgrades package and dependencies
+- name: unattended-upgrades | Install unattended upgrades package and dependencies
   become: true
   ansible.builtin.package:
     name:
-      - unanttended-upgrades
+      - unattended-upgrades
       - mailutils
     state: present
 - name: unattended-upgrades | Copy unattended-upgrades 20auto-upgrades

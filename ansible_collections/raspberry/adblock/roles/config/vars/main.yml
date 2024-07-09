@@ -1,5 +1,5 @@
 ---
-config_os_family: "Raspbian"
+config_distribution: "Debian"
 config_disable_services:
   - cups
   - cups-browsed

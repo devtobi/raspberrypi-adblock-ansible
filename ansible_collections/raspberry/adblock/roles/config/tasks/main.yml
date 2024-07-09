@@ -2,8 +2,8 @@
 - name: Raspi configurations
   ansible.builtin.import_tasks:
     file: raspi-config.yml
-  when: ansible_facts["distribution"] == config_os_family
+  when: ansible_facts["distribution"] == config_distribution
 - name: Service configurations
   ansible.builtin.import_tasks:
     file: services.yml
-  when: ansible_facts["distribution"] == config_os_family
+  when: ansible_facts["distribution"] == config_distribution

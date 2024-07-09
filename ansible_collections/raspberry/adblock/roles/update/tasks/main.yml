@@ -8,4 +8,4 @@
     autoclean: true
     clean: true
     purge: true
-  when: ansible_facts["os_family"] == "Debian"
+  when: ansible_facts["distribution"] == "Debian"
