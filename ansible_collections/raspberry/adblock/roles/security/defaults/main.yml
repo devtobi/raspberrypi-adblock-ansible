@@ -5,13 +5,11 @@ security_auto_reboot_time: 02:00
 security_system_user: root
 security_allow_ufw_ports_udp:
   # DNS ports
-  - 53
-  - 853
+  - 53 # DNS support
+  - 443 # DoH support
+  - 853 # DoQ support
   # DHCP ports
-  - 67
-  - 68
-  - 547
-  - 4711
+  # - 4711 # PiHole api engine
 security_allow_ufw_ports_tcp:
   # SSH port
   - 22
@@ -20,6 +18,6 @@ security_allow_ufw_ports_tcp:
   - 80
   # DNS ports
   - 53
-  - 853
+  - 853 # DoT support
   # Adguard installation interface
   - 3000
