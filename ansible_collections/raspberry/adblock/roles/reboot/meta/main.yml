@@ -8,3 +8,4 @@ galaxy_info:
     - os
     - reboot
 dependencies: []
+allow_duplicates: true

@@ -8,3 +8,4 @@ galaxy_info:
     - updates
     - os
 dependencies: []
+allow_duplicates: true
