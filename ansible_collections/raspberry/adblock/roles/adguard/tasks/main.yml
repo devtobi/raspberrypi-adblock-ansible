@@ -1,0 +1,7 @@
+---
+- name: Download and move files
+  ansible.builtin.import_tasks:
+    file: download.yml
+- name: Install adguard
+  ansible.builtin.import_tasks:
+    file: install.yml

@@ -1,0 +1,4 @@
+---
+adguard_archive_file: "AdGuardHome_linux_arm64.tar.gz"
+adguard_release_download_url: "https://github.com/AdguardTeam/AdGuardHome/releases/download/{{ adguard_version }}/{{ adguard_archive_file }}"
+adguard_binary_path: "{{ adguard_install_location }}/AdGuardHome/AdGuardHome"

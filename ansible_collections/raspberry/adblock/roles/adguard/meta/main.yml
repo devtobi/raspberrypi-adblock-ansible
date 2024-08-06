@@ -1,0 +1,9 @@
+---
+galaxy_info:
+  author: langehm, devtobi
+  description: This role installs and configures adguard-home on the Raspberry Pi
+  license: MIT
+  min_ansible_version: "2.15"
+  galaxy_tags:
+    - adguard
+dependencies: []

@@ -1,0 +1,12 @@
+---
+- name: install | Install AdGuard as a service
+  become: true
+  ansible.builtin.command:
+    cmd: "{{ adguard_binary_path }} -s install"
+  changed_when: true
+
+- name: install | Enable AdGuard service
+  become: true
+  ansible.builtin.command:
+    cmd: "{{ adguard_binary_path }} -s start"
+  changed_when: true

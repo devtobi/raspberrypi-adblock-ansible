@@ -1,0 +1,18 @@
+---
+- name: download | Download the archive from adguard-home github repository
+  become: true
+  ansible.builtin.get_url:
+    url: "{{ adguard_release_download_url }}"
+    dest: "{{ adguard_install_location }}"
+    mode: 700
+- name: download | Extract archive file
+  become: true
+  ansible.builtin.unarchive:
+    remote_src: true
+    src: "{{ adguard_archive_file }}"
+    dest: "{{ adguard_install_location }}"
+- name: download | Delete archive file
+  become: true
+  ansible.builtin.file:
+    path: "{{ adguard_archive_file }}"
+    state: absent
